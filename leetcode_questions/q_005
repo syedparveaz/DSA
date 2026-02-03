@@ -1,1 +1,25 @@
+# Running sum of 1d array
+
+# input = [1,2,3,4]
+#output = [1,3,6,10]
+
+# 1st way ( with extra variable )
+
+"""
+nums = [1,2,3,4]
+out = []
+sum = 0
+for i in nums:
+    sum = sum + i
+    out.append(sum)
+print(out)
+"""
+
+# 2nd way ( without extra variable, just changing the element in the nums directly ) --> will affect nums
+
+
+nums = [1,2,3,4]
+for i in range(1,len(nums)):
+    nums[i] = nums[i] + nums[i-1]
+print(nums)
 
