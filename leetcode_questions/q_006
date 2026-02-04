@@ -1,1 +1,32 @@
+# 1920. build array from permutation
 
+# Input: nums = [0,2,1,5,3,4]
+# Output: [0,1,2,4,5,3]
+
+# 1st way
+
+# steps to solve.
+# 1. Create a temporary array of same size (initialized with 0)
+# 2. Loop through elements of nums ( list / argument )
+# 3. For each i , ( index mapping )
+# 4. final answer.
+
+"""
+nums = [0,2,1,5,3,4]
+temp = [0]*len(nums)
+
+for i in nums:
+    temp[i] = nums[nums[i]]
+print(temp)
+"""
+
+# 2nd way
+
+"""
+nums = [0,2,1,5,3,4]
+temp=[]
+
+for i in range(len(nums)):
+    nums[i] = nums[nums[i]]
+print(nums)
+"""
