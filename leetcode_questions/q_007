@@ -1,1 +1,55 @@
 
+# 1365. how many numbers are smaller than current number.
+
+# Input: nums = [8,1,2,2,3]    values
+# Output: [4,0,1,1,3]          count
+
+# 1st way ( brute force )
+
+"""
+def smallerNumbersThanCurrent(nums):
+    result = []
+
+    for i in range(len(nums)):
+        count = 0
+        for j in range(len(nums)):
+            if nums[j] < nums[i]:
+                count += 1
+        result.append(count)
+
+    return result
+"""
+
+# 2nd way ( clean brute force method )
+
+"""
+def smallerNumbersThanCurrent(nums):
+    m = []
+    for i in nums:
+        c = 0
+        for j in nums:
+            if j < i:
+                c += 1
+        m.append(c)
+    return m
+nums = [8,1,2,2,3]
+print(smallerNumbersThanCurrent(nums))
+"""
+
+# 3rd way ( o(1) --> using hashmap and array )
+
+"""
+def smallerNumbersThanCurrent(nums):
+    t = sorted((nums))
+    d = {}
+    for i, j in enumerate(t):
+        if j not in d:
+            d[j] = i
+    r = []
+    for i in nums:
+        r.append(d[i])
+    return r
+nums = [8,1,2,2,3]
+print(smallerNumbersThanCurrent(nums))
+"""
+
