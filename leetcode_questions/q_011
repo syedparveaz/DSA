@@ -1,1 +1,33 @@
+# 1295. Find Numbers with Even Number of Digits
+
+# 1295. Find Numbers with Even Number of Digits
+
+"""
+n = [12, 22, 213, 432 , 32412, 21, 10 , 00]       # 00 is not taken as even no of digits
+out = []
+c = 0
+for i in n:
+    if len(str(i)) % 2 ==0:
+        out.append(i)
+        c+=1
+print(out)
+print(c)
+"""
+
+
+n = [12, 22, 2121, 222,2,97772]
+count = 0
+
+for i in n:
+    no_of_digits = 0
+
+    temp = i
+    while temp > 0:
+        temp = temp // 10                  # divide
+        no_of_digits += 1
+
+    if no_of_digits % 2 == 0 :
+        count+=1
+
+print(count)
 
