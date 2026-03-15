@@ -30,3 +30,14 @@ for i in range(len(nums)):
     nums[i] = nums[nums[i]]
 print(nums)
 """
+
+# 3rd way
+
+nums = [4,5,0,1,2,3]
+ans = []
+
+for i in range(len(nums)):
+    ans.append(nums[nums[i]])
+print(ans)
+
+
