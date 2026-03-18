@@ -1,1 +1,74 @@
+ # 217. Contains Duplicate
+
+"""
+example 1
+Input: nums = [1,2,3,1]
+Output: true
+
+Explanation:
+The element 1 occurs at the indices 0 and 3.
+"""
+
+"""
+example 2
+Input: nums = [1,2,3,4]
+Output: false
+
+Explanation:
+All elements are distinct.
+"""
+
+# 1st way ( if count > 1 , then there is duplicate values in list)
+# list count is slower for large lists because count() scans the list every time.
+
+"""
+l = [1,2,3,4,5,6]
+
+for i in l:
+    if l.count(i) > 1 :
+        print("False")
+        break
+else:
+    print("True")
+"""
+
+
+# 2nd way ( using set as temp variable so that no repeated values are allowed )
+
+"""
+l = [1,2,3,4,4,3,2,1]
+seen = set()
+
+for i in l:
+    if i in seen:
+        print('False')
+else:
+    print("True")
+"""
+
+# 3rd way ( typecasting and counting key )
+
+"""
+l = [1,2,3,4,5]
+d={}
+
+for i in l:
+    if i in d:
+        print('False')
+        break
+    d[i]= 1
+else:
+    print('True')
+"""
+
+# 4th way ( typecasting --> set does not accept duplicate values )
+
+"""
+l = [1,2,3,4,5,3,3,3,3]
+
+if len(l) == len(set(l)):
+    print("True")
+else:
+    print("False")
+"""
 
