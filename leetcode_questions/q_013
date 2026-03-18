@@ -20,6 +20,7 @@ All elements are distinct.
 
 # 1st way ( if count > 1 , then there is duplicate values in list)
 # list count is slower for large lists because count() scans the list every time.
+# in leetcode , this gets time limit exceeded error coz of longer run time
 
 """
 l = [1,2,3,4,5,6]
