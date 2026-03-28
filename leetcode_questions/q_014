@@ -1,1 +1,33 @@
 
+# 169. Majority Element
+
+"""
+Example 1:
+Input: nums = [3,2,3]
+Output: 3
+"""
+
+"""
+Example 2:
+Input: nums = 
+Output: 2
+"""
+
+# 1st way ( just using nested for loop and finding )
+# this code throws time limit exceeded error , but this is also correct way of solving the problem but not for larger inputs
+"""
+nums = [2,2,1,1,1,2,2]
+out = []
+majority_count = len(nums)//2
+for i in nums:
+     c = 0
+     for j in nums:
+         if i == j:
+             c += 1
+     if c > majority_count:
+         if i not in out:
+             out.append(i)
+print(out)
+"""
+
+# 2nd way ( using hashmap )
