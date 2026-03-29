@@ -30,4 +30,23 @@ for i in nums:
 print(out)
 """
 
-# 2nd way ( using hashmap )
+# 2nd way ( Boyer-Moore Voting Algorithm! )
+
+"""
+def majority(nums):
+    element = None                         
+    c=0
+
+    for i in nums:
+        if c == 0:                         # if count is zero , swap the element
+            element = i         
+        if i == element:                   # if loop 'i' is element , add/increment the count
+            c = c + 1            
+        else:                              # if loop 'i' is different than element , subtract/reduce the count 
+            c = c - 1
+            
+    return element
+
+nums = [1,1,1,2,2,2,2,2,2,2,2,2,2,1,1]
+print(majority(nums))
+"""
