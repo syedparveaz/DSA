@@ -1,0 +1,53 @@
+# Question - 03
+
+# link : https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/?envType=problem-list-v2&envId=wkubrcah
+
+# 1295 - Find Numbers with Even Number of Digits (Array)
+
+"""
+Example 1:
+Input: nums = [12,345,2,6,7896]
+Output: 2
+Explanation:
+12 contains 2 digits (even number of digits).
+345 contains 3 digits (odd number of digits).
+2 contains 1 digit (odd number of digits).
+6 contains 1 digit (odd number of digits).
+7896 contains 4 digits (even number of digits).
+Therefore only 12 and 7896 contain an even number of digits.
+
+Example 2:
+Input: nums = [555,901,482,1771]
+Output: 1
+Explanation:
+Only 1771 contains an even number of digits.
+"""
+
+# 1st way ( typecasting and find )
+
+"""
+nums = [12,345,2,6,7896]
+out = 0
+
+for i in nums:
+    if len(str(i)) % 2 == 0:
+        out+=1
+print(out)
+"""
+
+# 2nd way (just take reminder , find len and find even or odd)
+
+"""
+nums = [12,345,2,6,7896]
+even = 0
+
+for i in nums:
+    c=0
+    while i > 0:
+        rem = i % 10
+        c += 1
+        i//=10
+    if c%2==0:
+        even+=1
+print(even)
+"""
