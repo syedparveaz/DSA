@@ -1,0 +1,39 @@
+# Question - 04
+
+# link : https://leetcode.com/problems/defanging-an-ip-address/description/?envType=problem-list-v2&envId=wkubrcah
+
+# 1108 - Defanging an IP Address (String)
+# Given a valid (IPv4) IP address, return a defanged version of that IP address.
+# A defanged IP address replaces every period "." with "[.]".
+
+
+"""
+Example 1:
+Input: address = "1.1.1.1"
+Output: "1[.]1[.]1[.]1"
+
+Example 2:
+Input: address = "255.100.50.0"
+Output: "255[.]100[.]50[.]0"
+"""
+
+# 1st way ( if else conditions )
+
+"""
+address = "255.100.50.0"
+res = ''
+for i in address:
+    if i != '.':
+        res = res + i
+    else:
+        res = res + '[.]'
+print(res)
+"""
+
+# 2nd way ( using replace func )
+
+"""
+address = "255.100.50.0"
+address = address.replace('.','[.]')           # replace(old,new)
+print(address)
+"""
