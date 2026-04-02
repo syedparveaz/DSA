@@ -1,0 +1,95 @@
+# Question - 07
+
+# link: https://leetcode.com/problems/matrix-diagonal-sum/description/?envType=problem-list-v2&envId=wkubrcah
+
+# 1572 - Matrix Diagonal Sum (2D Array Basics)
+
+# Given a square matrix mat, return the sum of the matrix diagonals.
+# Only include the sum of all the elements on the primary diagonal
+# and all the elements on the secondary diagonal that are not part of the primary diagonal.
+
+
+"""
+Example 1:
+Input: mat = [[1,2,3],
+              [4,5,6],
+              [7,8,9]]
+    Output: 25
+Explanation: Diagonals sum: 1 + 5 + 9 + 3 + 7 = 25
+Notice that element mat[1][1] = 5 is counted only once.
+
+Example 2:
+Input: mat = [[1,1,1,1],
+              [1,1,1,1],
+              [1,1,1,1],
+              [1,1,1,1]]
+    Output: 8
+
+
+Example 3:
+Input: mat = [[5]]
+    Output: 5
+"""
+#----------------------------------------------------------------------------------------------------------------------
+# NOTE:
+#------
+# 1. Get the length of the matrix (n).
+# 2. Loop through each row (i) from 0 to n-1.
+# 3. Add the "Mirror" elements: * Left side: mat[i][i]
+            # Right side: mat[i][n - 1 - i]
+# 4. The "Overlap" Check: If n is odd, subtract the very middle element once (because both diagonals share it).
+
+#----------------------------------------------------------------------------------------------------------------------
+
+# 1st way (nested for loop)
+
+"""
+                            #     j j j
+mat = [[1,2,3],             #  i [0,1,2],    (0,0) , (0,2) --> 1 + 3
+       [4,5,6],             #  i [0,1,2],    (1,1)         --> 5
+       [7,8,9]]             #  i [0,1,2]     (2,0) , (2,2) --> 7 + 9
+res = 0
+n = len(mat)
+
+for i in range(n):
+    for j in range(n):
+        if i==j :                               # primary diagonal
+            res = res + mat[i][j]
+        elif i+j == n-1:                        # secondary diagonal
+            res = res + mat[i][j]
+print(res)
+"""
+
+# 2nd way (mirror elements)
+
+"""
+                            #     j j j
+mat = [[1,2,3],             #  i [0,1,2],    (0,0) , (0,2) --> 1 + 3
+       [4,5,6],             #  i [0,1,2],    (1,1)         --> 5
+       [7,8,9]]             #  i [0,1,2]     (2,0) , (2,2) --> 7 + 9
+
+total = 0
+count = len(mat)
+
+for i in range(count):
+    total+= mat[i][i]                         # primary
+    total+=mat[i][count-1-i]                  # secondary
+
+if count % 2 != 0:
+    mid_mat = count//2                          # to remove middle element from matrix
+    total = total - mat[mid_mat][mid_mat]
+print(total)
+"""
+
+# 3rd way ( python way --> list comprehension)
+
+                            #     j j j
+mat = [[1,2,3],             #  i [0,1,2],    (0,0) , (0,2) --> 1 + 3
+       [4,5,6],             #  i [0,1,2],    (1,1)         --> 5
+       [7,8,9]]             #  i [0,1,2]     (2,0) , (2,2) --> 7 + 9
+n=len(mat)
+primary = sum(mat[i][i] for i in range(n))         # sum ( primary diagonal (0,0),(1,1),(2,2) )
+secondary = sum(mat[i][n-1]-i for i in range(n))   # sum ( primary diagonal (0,2),(1,1),(2,0) )
+overlap = mat[n//2][n//2] if n%2!=0 else 0         # if matrix is odd , then remove the repeated value like (1,1)
+
+print( (primary+secondary) - overlap )      # ( primary + secondary ) - repeated value
