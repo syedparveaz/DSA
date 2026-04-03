@@ -1,0 +1,52 @@
+
+# question - 10
+
+# link : https://leetcode.com/problems/jewels-and-stones/?envType=problem-list-v2&envId=wkubrcah
+
+# 771  - Jewels and Stones (String/Hash map)
+
+# You're given strings jewels representing the types of stones that are jewels, and
+# stones representing the stones you have. Each character in stones is a type of stone you have.
+# You want to know how many of the stones you have are also jewels.
+# case sensitive
+
+"""
+Example 1:
+Input: jewels = "aA", stones = "aAAbbbb"
+Output: 3
+#-----------------------------------------------
+Example 2:
+Input: jewels = "z", stones = "ZZ"
+Output: 0
+"""
+
+# 1st way ( typecasting it into list and check )
+
+"""
+jewels = "aA"
+stones = "aAAbbbb"
+l_jewels = list(jewels)
+l_stones = list(stones)
+
+c=0
+for i in l_jewels:
+    for j in l_stones:
+        if i==j:
+            c+=1
+print(c)
+"""
+
+# 2nd way ( typecasting set and loop and compare )
+
+"""
+jewels = "aA"
+stones = "aAAbbbb"
+set_jewels=set(jewels)
+
+c=0
+for i in stones:
+    if i in set_jewels:
+        c+=1
+print(c)
+"""
+
