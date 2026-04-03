@@ -1,0 +1,52 @@
+# Question - 09
+
+# link : https://leetcode.com/problems/check-if-the-sentence-is-pangram/?envType=problem-list-v2&envId=wkubrcah
+
+# 1832. Check if the Sentence Is Pangram  --> ( must contain all 26 alphabets)
+
+# A pangram is a sentence where every letter of the English alphabet appears at least once.
+# Given a string sentence containing only lowercase English letters,
+# return true if sentence is a pangram, or false otherwise.
+
+"""
+Example 1:
+Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
+Output: true
+Explanation: sentence contains at least one of every letter of the English alphabet.
+
+Example 2:
+Input: sentence = 'in this the sentence words are repeated , so count > 1 --> and contains special characters.'
+Output: false
+"""
+
+
+# 1st way (if - else and adding in set and compare with given input len )
+
+"""
+sentence = "the quick brown fox jumps over the lazy dog"
+seen=set()
+if len(sentence)>=26:
+    for i in sentence.lower():
+        if i.isalpha():
+            seen.add(i)
+    if len(seen) == 26:
+        print('true')
+    else:
+        print('false')
+else:
+    print('False')
+"""
+
+# 2nd way ( using typecasting )
+# if u know input is only string even without numbers and spl characters , no space , no comma , etc.
+
+def panagram(input):
+    return len(set(input)) == 26
+input = "thequickbrownfoxjumpsoverthelazydog"
+print(panagram(input))
+
+# NOTES:
+# if sentence is only alphabets, no need to check isalpha()
+# if not check if all elements in sentence are only alphabets and then check for counts/len = 26
+# while comparing it will return in bool(T/F)
+
