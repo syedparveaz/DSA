@@ -1,0 +1,19 @@
+
+🔵 Phase 2: Two Pointers (The "Optimizer")                          -> Where is it, and how does it move?
+Goal: One pass (O(N)), zero extra memory (O(1)).
+
+11. 344  - Reverse String (String)
+12. 125  - Valid Palindrome (String)
+13. 167  - Two Sum II - Input Array Is Sorted (Array)
+14. 977  - Squares of a Sorted Array (Array)
+15. 283  - Move Zeroes (Array)
+16. 26   - Remove Duplicates from Sorted Array (Array)
+17. 345  - Reverse Vowels of a String (String)
+18. 11   - Container With Most Water (Array)
+19. 15   - 3Sum (Array - Fixed + Two Pointers)
+20. 844  - Backspace String Compare (String)
+21. 925  - Long Pressed Name (String)
+22. 557  - Reverse Words in a String III (String)
+23. 88   - Merge Sorted Array (Array - 3 Pointers)
+24. 27   - Remove Element (Array)
+25. 80   - Remove Duplicates from Sorted Array II (Array)
