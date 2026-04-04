@@ -1,0 +1,80 @@
+# Question - 12
+
+# link : https://leetcode.com/problems/valid-palindrome/description/?envType=problem-list-v2&envId=wk460a77
+
+# 125  - Valid Palindrome (String) -->  it reads the same forward and backward.
+
+# Given a string s, return true if it is a palindrome, or false otherwise.
+
+# Notes / conditions / Constraints:
+# A phrase is a palindrome if, after converting all uppercase letters into lowercase letters
+# removing all non-alphanumeric characters.
+# Alphanumeric characters include letters and numbers.
+
+"""
+Example 1:
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+Example 2:
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+
+Example 3:
+Input: s = " "
+Output: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+Since an empty string reads the same forward and backward, it is a palindrome.
+"""
+
+# 1st way (loop and extra variable)
+
+"""
+s = "A man, a plan, a canal: Panama"
+empty = ''
+
+for i in s.lower():
+    if i.isalpha():
+        empty+=i
+
+if empty == empty[::-1]:
+    print('pallindrome')
+else:
+    print('not a pallindrome')
+"""
+# 2nd way ( two pointer )
+
+# NOTES:
+# clear the junks first and enjoy the loop
+# string is immutable data type , so copying inside same can also create a extra space like
+    # s = "A man, a plan, a canal: Panama"
+    # s = s.lower() --> space = O(N)         --> store extra space as string is immutable datatype
+                                              # they cannot be changed after they are created.
+
+"""
+# s = "A man, a plan, a canal: Panama"
+# s = s.lower()   --> change in single line , no need to repeated more time in comparison
+                    # but it takes O(N) space complexity
+# here we need O(1) space, coz moto of two pointers --> so change to lower each time of comparing.
+
+s = "A man, a plan, a canal: Panama"
+l = 0
+r = len(s)-1
+
+palindrome = True
+while l < r:
+    if s[l].lower().isalnum()==False:
+        l+=1
+    elif s[r].lower().isalnum() == False:
+        r-=1
+    elif s[l].lower().isalnum() and s[r].lower().isalnum():
+        if s[l].lower() == s[r].lower():
+            l+=1
+            r-=1
+        else:
+            palindrome = False
+            break
+print(palindrome)
+"""
