@@ -41,3 +41,27 @@ while l<r:
          l+=1
         r-=1
 """
+
+
+
+# 2nd way ( use return )
+
+def twoSum_2(numbers, target):
+
+    l = 0
+    r = len(numbers) - 1
+
+    while l < r:
+        actual_sum = numbers[l] + numbers[r]     # variable to compare with target
+
+        if actual_sum > target:                  # if target is lower , reduce right pointer
+            r -= 1
+        elif actual_sum < target:                # if target is higher , increment left pointer
+            l += 1
+        else:                                    # if same , return index of l and r with increment of 1
+            return [l + 1, r + 1]                # increment of 1, coz 1-indexed array of integers
+
+
+nums = [2,7,11,15]                              # Given a 1-indexed array of integers numbers that is sorted
+target = 9
+print(twoSum_2(nums,target))
