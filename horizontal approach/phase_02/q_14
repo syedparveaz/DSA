@@ -1,0 +1,42 @@
+# Question - 14
+
+# link : https://leetcode.com/problems/squares-of-a-sorted-array/description/?envType=problem-list-v2&envId=wk460a77
+
+# 977  - Squares of a Sorted Array (Array)
+
+# Given an integer array nums sorted in non-decreasing order
+# return an array of the squares of each number sorted in non-decreasing order.
+
+"""
+Example 1:
+Input: nums = [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100] , After sorting, it becomes [0,1,9,16,100].
+
+Example 2:
+Input: nums = [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+"""
+
+# 1st way (append and reverse the output to get in ascending order )
+# taking l and r square , coz it may have high square like -ve ^ 2 or +ve ^ 2
+
+nums = [-7,-3,2,3,11]
+res = []                                # empty list of result and append at last
+
+l , r = 0 , len(nums)-1
+
+while l <= r:
+
+    sq_left = nums[l] * nums[l]
+    sq_right = nums[r] * nums[r]
+
+    if  sq_left > sq_right:             # compare the squares of l and r , then append in res accordingly
+        res.append(sq_left)             # if l is high , append left ^ 2
+        l+=1                            # l will be increased to move left pointer and  avoid loops , duplicate.
+
+    else:
+        res.append(sq_right)            # if l is high , append right ^ 2
+        r-=1                            # r will be reduced to move right pointer and avoid loops , duplicate
+
+print(res[::-1])             # as we are just appending it will be in ascending order , so reverse for actual output.
