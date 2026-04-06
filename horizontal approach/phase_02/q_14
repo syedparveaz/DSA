@@ -40,3 +40,29 @@ while l <= r:
         r-=1                            # r will be reduced to move right pointer and avoid loops , duplicate
 
 print(res[::-1])             # as we are just appending it will be in ascending order , so reverse for actual output.
+
+# 2nd way ( create a [0] * len(nums) list and modify/update accordingly )
+
+nums = [-7,-3,2,3,11]
+res = [0] * len(nums)
+
+l,r = 0 ,len(nums)-1
+pos = len(nums)-1                   # last
+
+while l<=r:
+    sq_left = nums[l] ** 2
+    sq_right = nums[r] ** 2
+
+    if sq_left > sq_right:
+        res[pos] = sq_left
+        l+=1
+    else:
+        res[pos] = sq_right
+        r-=1
+
+    pos -= 1                         # decrement of position , coz second last , third last , ...
+print(res)
+
+
+
+
