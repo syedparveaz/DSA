@@ -33,3 +33,27 @@ for i in range(0,len(nums)):
         l+=1
 print(nums)
 """
+
+
+# 2nd way
+# If u need to solve in while loop , manual controller .
+# l -> slow pointer , r -> traverse the array and monitor
+
+"""
+nums = [0,1,0,3,17,0,26,9,0]
+
+left = 0       # slow pointer  --> holds / track
+right = 0      # fast pointer  --> traverse / monitor whether zero or not.
+
+while len(nums) > right:            # Use while to keep full manual control
+    if nums[right] != 0:
+        nums[left] , nums[right] = nums[right] , nums[left]
+        left+=1
+
+    right += 1               # manual updater , Move the Tracker -> EVERY turn, no matter what
+                                # while loop condition updation , else stuck in infinite loop.
+
+print(nums)
+"""
+
+
