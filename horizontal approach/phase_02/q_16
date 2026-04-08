@@ -1,0 +1,43 @@
+# Question - 16
+
+# link : https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=problem-list-v2&envId=wk460a77
+
+# 26   - Remove Duplicates from Sorted Array (Array)
+# output as no of unique elements and nums - array is sorted
+
+# Non-decreasing order --> order can change and it has duplicates
+# Consider the number of unique elements in nums to be k.
+# After removing duplicates, return the number of unique elements k.
+# The first k elements of nums should contain the unique numbers in sorted order.
+# The remaining elements beyond index k - 1 can be ignored.
+
+
+"""
+Example 1:
+Input: nums = [1,1,2]
+Output: 2, nums = [1,2,...]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+Example 2:
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,.........]
+Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores --> not that important just unique values).
+"""
+
+# 1st way -->
+
+# r / i --> traverse entire array and compare r and r-1 are same or not ? if not same then its unique and it swaps
+# l  --> holds the place where to swap (anchor), if swapped increment l+=1 so that we can modify next unique element
+
+"""
+nums = [0,0,1,1,1,2,2,3,3,4]
+
+l = 1
+for r in range(1,len(nums)):
+    if nums[r] != nums[r-1]:
+        nums[l] = nums[r]
+        l+=1
+print(l)
+"""
