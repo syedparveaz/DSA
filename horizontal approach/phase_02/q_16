@@ -41,3 +41,23 @@ for r in range(1,len(nums)):
         l+=1
 print(l)
 """
+
+
+# 2nd way  -> remove duplicate , count the len()
+
+# remove duplicate from original array and sort them.
+# from the sorted list , use len() and return the length.
+
+"""
+def removeDuplicates(nums):
+    # 1. Get unique elements and sort them to fix the 'set' order issue
+    unique_elements = sorted(list(set(nums)))
+
+    # 2. Overwrite the beginning of the original 'nums' list
+    for i in range(len(unique_elements)):
+        nums[i] = unique_elements[i]
+
+    # 3. Return the COUNT of unique elements, not the list
+    return len(unique_elements)
+"""
+
