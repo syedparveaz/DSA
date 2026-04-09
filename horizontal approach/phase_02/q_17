@@ -1,1 +1,43 @@
 
+# Question - 17
+
+# Link : https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=problem-list-v2&envId=wk460a77
+
+# 345. Reverse Vowels of a String
+
+# Given a string s, reverse only all the vowels in the string and return it.
+# they can appear in both lower and upper cases, more than once.
+
+"""
+Example 1:
+Input: s = "IceCreAm"
+Output: "AceCreIm"
+Explanation: The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+Example 2:
+Input: s = "leetcode"
+Output: "leotcede"
+"""
+
+# 1st way ( two pointer -> opposite ends meet in middle )
+
+"""
+s = "IceCreAm"
+s=list(s)                                                          # typecasting coz string in immutable
+vowels = {'a','e','i','o','u','A','E','I','O','U'}
+
+l,r=0,len(s)-1
+
+while l < r:
+    if s[l] in vowels and s[r] in vowels:
+        s[l],s[r] = s[r],s[l]
+        l += 1
+        r -= 1
+    elif s[l] not in vowels:
+        l += 1
+    elif s[r] not in vowels:
+        r -= 1
+print(''.join(s))                           # as s is in set / list -> set is faster than list
+                                                # convert list to string back
+"""
+
