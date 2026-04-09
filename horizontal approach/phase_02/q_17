@@ -41,3 +41,30 @@ print(''.join(s))                           # as s is in set / list -> set is fa
                                                 # convert list to string back
 """
 
+# 2nd way ( using for loop -> but while loop is faster )
+
+"""
+s = "IceCreAm"
+s=list(s)                                                          # typecasting coz string in immutable
+vowels = {'a','e','i','o','u','A','E','I','O','U'}
+
+
+l,r = 0,len(s)-1
+
+for i in range(0,len(s)):
+    if l >= r:                       # The "Stop Sign" --> To satisfy l must be lesser than r statement.
+        break
+
+    if s[l] in vowels and s[r] in vowels:
+        s[l],s[r] = s[r],s[l]
+        l+=1
+        r-=1
+    elif s[l] not in vowels:
+        l+=1
+    elif s[r] not in vowels:
+        r-=1
+print(''.join(s))
+"""
+
+
+
