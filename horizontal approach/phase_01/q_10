@@ -20,7 +20,7 @@ Input: jewels = "z", stones = "ZZ"
 Output: 0
 """
 
-# 1st way ( typecasting it into list and check )
+# 1st way ( nested for loop )
 
 """
 jewels = "aA"
@@ -35,8 +35,21 @@ for i in l_jewels:
             c+=1
 print(c)
 """
+#------------------------------------------------------------------------------
 
-# 2nd way ( typecasting set and loop and compare )
+# 2nd way ( single for loop. )
+
+"""
+jewels = 'aA'
+stones = 'aaBBAb'
+c=0
+for i in range(len(stones)):
+    if stones[i] in jewels:
+        c+=1
+print(c)
+"""
+#------------------------------------------------------------------------------
+# 3rd way ( using set like typecasting and checking )
 
 """
 jewels = "aA"
@@ -49,4 +62,21 @@ for i in stones:
         c+=1
 print(c)
 """
+#------------------------------------------------------------------------------
+# 4th way ( using hashmap )
 
+"""
+jewels = 'aAaaaaaaaaaaaaaaaaaaaaaa'
+stones = 'AaaBBAa'
+
+jewels_dict = {}
+
+for i in jewels:
+    if i not in jewels_dict:
+        jewels_dict[i] = 1
+c=0
+for i in stones:
+    if i in jewels_dict:
+       c+=1
+print(c)
+"""
