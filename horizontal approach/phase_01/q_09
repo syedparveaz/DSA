@@ -50,3 +50,18 @@ print(panagram(input))
 # if not check if all elements in sentence are only alphabets and then check for counts/len = 26
 # while comparing it will return in bool(T/F)
 
+# 3rd way
+
+sentence = "the quick brown fox jumps over the lazy dog"
+alpha_sentence = ""
+
+for i in sentence:
+    if i.isalpha() and i not in alpha_sentence:
+        alpha_sentence+=i
+print(alpha_sentence)
+
+if len(alpha_sentence) == 26:
+    print('pangram')
+else:
+    print('not a pangram')
+
