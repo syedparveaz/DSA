@@ -1,0 +1,15 @@
+Two Pointers phase - 01
+
+01 - 08 --> Opposite Ends (Converging Foundation)
+
+🎯 Level 1: The "Converging" Foundation (Opposite Ends)
+Goal: Shrinking the search space from the outside in.
+
+01. 344 - Reverse String — (String)
+02. 125 - Valid Palindrome — (String)
+03. 345 - Reverse Vowels of a String — (String)
+04. 917 - Reverse Only Letters — (String)
+05. 167 - Two Sum II - Input Array Is Sorted — (Array)
+06. 977 - Squares of a Sorted Array — (Array)
+07. 821 - Shortest Distance to a Character — (String/Array)
+08. 942 - DI String Match — (String/Array)
