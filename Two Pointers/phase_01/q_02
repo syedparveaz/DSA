@@ -1,0 +1,51 @@
+# 02. 125 - Valid Palindrome (String)
+
+"""
+s = "A man, a plan, a canal: Panama"
+# s = "racecar"
+
+l , r = 0 , len(s)-1
+palindrome = True
+while l < r:
+    if s[l].isalnum() == False or s[r].isalnum() == False:
+        if s[l].isalnum() == False:
+            l+=1
+        elif s[r].isalnum() == False:
+            r-=1
+    else:
+        if s[l].lower() == s[r].lower():
+            l+=1
+            r-=1
+        else:
+            palindrome = False
+            break
+print(palindrome)
+"""
+
+# or  --> better way like Slide left and right pointers past all non-alphanumeric noise characters
+         # what if we have 10000 ' ' space in left and right , it takes more time coz it execute each and every time
+         # but by this step it take less time , coz it make sure l and r are alphanum for sure.
+
+"""
+s = '1Racecar1'
+s = s.lower()
+
+l , r = 0 , len(s)-1
+palindrome = True
+
+while l < r:
+    # ship left pointer till it is alpha numeric
+    while l<r and not s[l].isalnum():
+        l+=1
+  
+    # ship right pointer till it is alpha numeric  
+    while l<r and not s[r].isalnum():
+        r-=1
+
+    if s[l] != s[r]:
+        palindrome = False
+        break
+    l+=1
+    r-=1
+print(palindrome)
+"""
