@@ -1,0 +1,21 @@
+
+# 03. 345 - Reverse Vowels of a String (String)
+
+"""
+s = "IceCreAm"                      # out = 'AceCreIm'
+s = list(s)                         # typecasting to list so that we can modify
+vowels = set('aeiouAEIUO')
+
+l , r = 0 , len(s)-1
+
+while l < r:
+    if s[l] not in vowels:
+        l+=1
+    elif s[r] not in vowels:
+        r-=1
+    else:
+        s[l],s[r] = s[r],s[l]
+        r-=1
+        l+=1
+print(''.join(s))
+"""
