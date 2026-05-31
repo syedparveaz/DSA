@@ -1,0 +1,46 @@
+
+# 04. 917 - Reverse Only Letters — (String)
+
+"""
+s = "a-bC-dEf-ghIj"
+s=list(s)
+
+l,r = 0,len(s)-1
+
+while l < r:
+    if not (('A' <= s[l] <= 'Z') or ('a' <= s[l] <= 'z')):
+        l += 1
+
+    elif not (('A' <= s[r] <= 'Z') or ('a' <= s[r] <= 'z')):
+        r-=1
+
+    else:
+        s[l],s[r] = s[r],s[l]
+        l+=1
+        r-=1
+
+print(''.join(s))
+"""
+
+# or
+
+"""
+s = "a-bC-dEf-ghIj"
+s=list(s)
+
+l,r = 0,len(s)-1
+
+while l < r:
+    if not s[l].isalpha():
+        l += 1
+
+    elif not s[r].isalpha():
+        r-=1
+
+    else:
+        s[l],s[r] = s[r],s[l]
+        l+=1
+        r-=1
+
+print(''.join(s))
+"""
