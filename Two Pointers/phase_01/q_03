@@ -6,7 +6,8 @@ s = "IceCreAm"                      # out = 'AceCreIm'
 s = list(s)                         # typecasting to list so that we can modify
 vowels = set('aeiouAEIUO')
 
-l , r = 0 , len(s)-1
+l = 0 
+r = len(s)-1
 
 while l < r:
     if s[l] not in vowels:
