@@ -1,1 +1,42 @@
 
+
+# 06. 977 - Squares of a Sorted Array (Array)
+
+"""
+nums = [-4, -1, 0, 3, 10]
+out = []
+
+l , r = 0 , len(nums)-1
+
+while l <= r:
+    sq_l = nums[l] ** 2
+    sq_r = nums[r] ** 2
+
+    if sq_l > sq_r:
+        out.append(sq_l)
+        l+=1
+    else:
+        out.append(sq_r)
+        r-=1
+
+print(out[::-1])               # slicing into reverse also works with 0(n)
+
+"""
+
+# or --> use abs directly in list (for i)
+
+"""
+nums = [-4, -1, 0, 3, 10]
+out = []
+
+l , r = 0 , len(nums)-1
+
+while l <= r:
+    if abs(nums[l]) > abs(nums[r]):
+        out.append(nums[l] ** 2)
+        l+=1
+    else:
+        out.append(nums[r] ** 2)
+        r-=1
+print(out[::-1])
+"""
