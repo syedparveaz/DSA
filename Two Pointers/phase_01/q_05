@@ -1,1 +1,43 @@
 
+
+# 05. 167 - Two Sum II - Input Array Is Sorted (Array)
+
+"""
+numbers = [2,3,4,5,5,6,8,9,11]
+target = 10
+
+out=[]
+
+l,r = 0,len(numbers)-1
+
+while l<r:
+    if numbers[l]+numbers[r] == target:
+        if [numbers[l],numbers[r]] not in out:
+            out.append([numbers[l],numbers[r]])
+        l+=1
+        r-=1
+    elif numbers[l]+numbers[r] < target:
+        l+=1
+    else:
+        r-=1
+print(out)
+"""
+
+# or
+
+"""
+numbers = [2,3,4,5,6,8,9,11]
+target = 10
+
+l,r = 0,len(numbers)-1
+
+while l < r:
+    if numbers[l]+numbers[r] > target:
+        r-=1
+    elif numbers[l]+numbers[r] < target:
+        l+=1
+    else:
+        print((numbers[l],numbers[r]) ,sep='_',end=' ')
+        l+=1
+        r-=1
+"""
