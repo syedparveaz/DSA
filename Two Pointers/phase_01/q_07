@@ -1,1 +1,73 @@
 
+# 07. 821 - Shortest Distance to a Character — (String/Array)
+
+"""
+s = 'loveleetcode'
+c = 'e'
+
+out = [float("inf")] * len(s)
+
+l_current = float('inf')
+
+for i in range(len(s)):
+    if s[i] == c:
+        l_current = 0
+    else:
+        l_current+=1
+
+    out[i] = l_current
+
+r_current = float('inf')
+for i in range(len(s)-1,-1,-1):
+    if s[i] == c:
+        r_current = 0
+    else:
+        r_current += 1
+
+    out[i] = min(out[i],r_current)
+
+print(out)
+"""
+
+# or
+
+"""
+def shortestToChar(string,character):
+    n = len(string)
+
+    # 1. Left Pass: Build the left distances using .append()
+    left_distances = []
+    l_current = float('inf')
+    for i in range(n):
+        if string[i] == character:
+            l_current = 0
+        else:
+            l_current += 1
+        left_distances.append(l_current)
+
+    # 2. Right Pass: Build the right distances using .append()
+    right_distances = []
+    r_current = float('inf')
+    for i in range(n - 1, -1, -1):
+        if string[i] == character:
+            r_current = 0
+        else:
+            r_current += 1
+        right_distances.append(r_current)
+
+    # Since we walked backward, the right_distances list is reversed.
+    # We flip it back to match the original string order.
+    right_distances.reverse()
+
+    # 3. Combine Pass: Merge them by taking the minimum at each spot
+    out = []
+    for i in range(n):
+        out.append(min(left_distances[i], right_distances[i]))
+
+    return out
+
+str = 'loveleetcode'
+ch = 'e'
+
+print(shortestToChar(str,ch))
+"""
