@@ -38,3 +38,63 @@ while r < len(s):
     
 print(s)
 """
+
+# or
+
+# Step 1: Create temporary list (x) to filter and sort the numbers
+# Step 2: Reading the List Backwards (nums[::-1])
+# Step 3: The Logic Inside the for Loop
+#         inner : 1. If it's a 0, it uses .append(0) to throw it at the very end of x (temp list).
+#         inner : 2. If it's a non-zero, it uses .insert(0, i) to push it to the very front (index 0) of x.
+# Step 4: Replace the content of x , for "In-Place" modification
+
+
+"""
+def moveZeroes(nums):
+        x=[]
+        for i in nums[::-1]:
+            if i==0:
+                x.append(0)
+            else:
+                x.insert(0,i)
+
+        nums[:] = x
+        return nums
+
+nums = [0,1,7,0,21,0,12]
+print(moveZeroes(nums))
+"""
+
+# or
+
+# with extra space
+
+
+"""
+nums = [0,1,7,0,21,0,12]
+
+zero = []
+temp = []
+
+for i in nums:
+    if i == 0:
+        zero.append(0)
+    else:
+        temp.append(i)
+nums[:] = temp + zero
+
+print(nums)
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
