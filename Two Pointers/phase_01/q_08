@@ -1,1 +1,29 @@
 
+
+# 08. 942 - DI String Match — (String/Array)
+
+"""
+def diStringMatch(s):
+    perm = []
+    l = 0
+    r = len(s)
+    for i in s:
+        if i == 'I':
+            perm.append(l)
+            l += 1
+        else:
+            perm.append(r)
+            r -= 1
+
+    # The loop finishes.
+
+    if s[-1] == 'I':
+        perm.append(l)
+    else:
+        perm.append(r)
+
+    return perm
+
+s = 'IDID'
+print(diStringMatch(s))
+"""
