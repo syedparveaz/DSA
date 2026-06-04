@@ -27,3 +27,29 @@ def diStringMatch(s):
 s = 'IDID'
 print(diStringMatch(s))
 """
+
+# or
+
+"""
+def diStringMatch(s):
+
+    perm = []
+    l = 0
+    r = len(s)
+    for i in s:
+        if i == 'I':
+            perm.append(l)
+            l += 1
+        else:
+            perm.append(r)
+            r -= 1
+
+    # The End: The loop finishes. Both left and right are now pointing at 2. Append 2 to the end.
+
+    perm.append(l)  # or perm.append(r)
+
+    return perm
+
+string = 'IDIDIIII'
+print(diStringMatch(string))
+"""
