@@ -1,1 +1,40 @@
 
+# 09. 283  - Move Zeroes — (Array)
+
+"""
+s = [1,9,0,4,0,5,0]
+
+l = 0
+for r in range(len(s)):
+    if s[r] != 0:
+        s[l],s[r] = s[r],s[l]
+        l+=1
+print(s)
+"""
+# step-1 : You keep your left hand (write_index) on the very first empty slot you need to fill.
+# step-2 : You use your right hand (read_index) to scan the boxes from left to right.
+# step-3 : When your right hand finds a valuable item, you swap it with the empty slot under your left hand.
+# step-4 : Now, that slot is filled, so you move your left hand one step to the right, waiting for the next item.
+
+
+# or -> using while loop.
+
+# using - while loop , same as for loop but manual traversing of r pointer.
+# traverse through the entire array like for loop by increasing ' r ' every time
+# have ' l ' pointer as place to swap if ' r ' finds zero 0.
+# r -> traverse and find the 0 and replace with l
+# l -> hold the position and like place where it need to be swapped .
+
+"""
+s = [1,0,3,0,12]
+
+l,r = 0,0
+while r < len(s):
+    if s[r] != 0:
+        s[l],s[r] = s[r],s[l]
+        l+=1
+
+    r+=1
+    
+print(s)
+"""
