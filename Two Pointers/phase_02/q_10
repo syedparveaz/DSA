@@ -1,0 +1,43 @@
+# 10. 27   - Remove Element — (Array)
+
+# 1st way -> same as move zeros.
+
+"""
+nums = [0,1,2,2,3,0,4,2]         # Output: count = 5 , nums = [0,1,4,0,3,_,_,_]
+val = 2
+
+l = 0
+c=0
+for r in range(0,len(nums)):
+    if nums[r] != val:
+        nums[r],nums[l] = nums[l],nums[r]
+        l+=1
+        c+=1
+print(c,nums)
+"""
+
+# -------------------------------------------------------------------------------------------------------------------
+
+# or
+
+# 2nd way -> use slow and fast two points , l act as both count and anchor to swap and r to traverse and find non val.
+
+"""
+nums = [0,1,2,2,3,0,4,2]        # remove val , out = 5 -> remove val from list and count
+val = 2
+
+count = 0                          # USED AS COUNT AND AS WELL AS LEFT POINTER ( ANCHOR )
+
+for r in range(len(nums)):
+    if nums[r] != val:
+        nums[count] = nums[r]         # to make the non val to be in first use extra l as position to swap.
+        count+=1                      # to move to next index , increase and use it as count as well.
+print(count)
+"""
+
+# step 1: Take extra var which act as both left pointer and count as 0.
+# step 2: Right index traverse through the array and find the val
+# step 3: If nums[r] = val , make nums[left] as nums[right] -> coz we need the non val in starting order.
+# step 4: Then add the count/left pointer and if found the place to be modified will be increased.
+# step 5: The nums order will be changed like val will be in first and others doesn't matter
+# step 6: Return the count
