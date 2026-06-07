@@ -22,10 +22,11 @@ print(l,nums)
 
 """
 nums = [1,1,2,2,2,3,3,4]
-print(nums)
-print(id(nums))
+# print(nums)
+# print(id(nums))
 nums[:] = sorted(list(set(nums)))        # to make it in place , use nums[:], using sort coz set is unordered datatype.
-print(nums)
-print(id(nums))
+# print(nums)
+# print(id(nums))
+print(len(nums))      # actual output is len(nums) after removing duplicates inplace..
 """
 
