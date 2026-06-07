@@ -14,3 +14,18 @@ for r in range(1,len(nums)):
         l+=1
 print(l,nums)
 """
+
+
+# --------------------------------------------------------------------------------------------------------
+
+# by typecasting.
+
+"""
+nums = [1,1,2,2,2,3,3,4]
+print(nums)
+print(id(nums))
+nums[:] = sorted(list(set(nums)))        # to make it in place , use nums[:], using sort coz set is unordered datatype.
+print(nums)
+print(id(nums))
+"""
+
