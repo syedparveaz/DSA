@@ -16,3 +16,19 @@ for i in range(2,len(nums)):
         l+=1
 print(l,nums[:l])
 """
+
+# --------------------------------------------------------------------------------------------------------------------------
+
+# 2nd way -> using count and append func with extra variable and replacing the original again.
+
+"""
+nums = [0,0,1,1,1,1,2,3,3]            # expected_out = 7
+
+out = []
+
+for i in nums:
+    if out.count(i) <2:
+        out.append(i)
+nums[:] = out
+print(len(nums),nums)
+"""
