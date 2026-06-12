@@ -1,0 +1,18 @@
+
+# 12. 80   - Remove Duplicates from Sorted Array II — (Array)
+
+# 1st way -> using slow and fast pointers -> 0(n)
+
+"""
+nums = [0,0,1,1,1,1,2,3,3]            # expected_out = 7
+
+l = 2
+
+for i in range(2,len(nums)):
+    if nums[i] == nums[l-2]:
+        continue
+    else:
+        nums[l] = nums[i]
+        l+=1
+print(l,nums[:l])
+"""
